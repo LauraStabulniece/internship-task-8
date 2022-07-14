@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Illustration } from '../interfaces/illustration';
+import {Illustration} from '../interfaces/Illustration';
 
 
 @Component({
