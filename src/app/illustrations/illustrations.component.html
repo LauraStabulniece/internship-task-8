@@ -1,10 +1,10 @@
 <h2>Love to love illustrations</h2>
 <!-- <button (click)="handleClick()" [disabled]="isDisabled"> -->
- <button (click)="isShowing = !isShowing">
+<!-- <button (click)="isShowing = !isShowing">
   <ng-container *ngIf="!isShowing">Show illustrations</ng-container>
-  <ng-container *ngIf="isShowing">Hide illustrations</ng-container>
-  <!-- Toggle illustrations -->
-</button>
+  <ng-container *ngIf="isShowing">Hide illustrations</ng-container> -->
+<!-- Toggle illustrations -->
+<!-- </button> -->
 <!-- <input type="text" (input)="handleInput($event)" />
 <div>{{ myName }}</div> -->
 <!-- <input type="text" [(ngModel)]="myName" /> -->
@@ -21,8 +21,7 @@
   </li>
 </ul> -->
 <ul *ngIf="isShowing">
-  <li *ngFor="let illustration of illustrations">
-    <img [src]="illustration.image" [alt]="illustration.name" width="100" />
-    {{ illustration.name }} by {{ illustration.author }}
-  </li>
+  <ng-container *ngFor="let singleIllustration of illustrations; let i = index">
+    <app-illustration (illustrationEmitter)="addToCard($event)" [illustration]="singleIllustration"></app-illustration>
+  </ng-container>
 </ul>

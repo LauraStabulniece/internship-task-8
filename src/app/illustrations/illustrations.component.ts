@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-interface Illustration {
-  name: string;
-  author: string;
-  image: string;
-}
+import { Illustration } from '../interfaces/illustration';
+
 
 @Component({
   selector: 'app-illustrations',
@@ -13,16 +10,32 @@ interface Illustration {
 export class IllustrationsComponent implements OnInit {
   illustrations: Illustration[] = [
     {
-      name: 'Bee',
-      author: 'Belinda Murphy',
+      name: 'bee',
+      author: 'belinda murphy',
       image: '../../assets/bee.jpg',
+      amount: 700,
     },
     {
-      name: 'Lady with the dog',
-      author: 'Beatrice Sautereau',
+      name: 'lady with the dog',
+      author: 'beatrice sautereau',
       image: '../../assets/ladyWithTheDog.jpg',
+      amount: 701,
+    },
+    {
+      name: 'swimmer',
+      author: 'mark ulriksen',
+      image: '../../assets/swimmer.png',
+      amount: 702,
+    },
+    {
+      name: 'sonos',
+      author: 'anita kunz',
+      image: '../../assets/sonos.png',
+      amount: 703,
     },
   ];
+
+  card: Illustration[] = [];
   // name: string = 'Bee';
   // author: string = 'Belinda Murphy';
   // src: string =
@@ -38,6 +51,10 @@ export class IllustrationsComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  addToCard(illustration: Illustration) {
+    console.log(illustration);
+  }
   // toggleIllustrations() {
   //   this.isShowing = !this.isShowing;
   // }
