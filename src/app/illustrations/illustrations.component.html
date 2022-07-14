@@ -1,13 +1,16 @@
 <h2>Love to love illustrations</h2>
-<button (click)="handleClick()" [disabled]="isDisabled">
-  Show illustrations
+<!-- <button (click)="handleClick()" [disabled]="isDisabled"> -->
+ <button (click)="isShowing = !isShowing">
+  <ng-container *ngIf="!isShowing">Show illustrations</ng-container>
+  <ng-container *ngIf="isShowing">Hide illustrations</ng-container>
+  <!-- Toggle illustrations -->
 </button>
 <!-- <input type="text" (input)="handleInput($event)" />
 <div>{{ myName }}</div> -->
-<input type="text" [(ngModel)]="myName" />
-<div>{{ myName }}</div>
+<!-- <input type="text" [(ngModel)]="myName" /> -->
+<!-- <div>{{ myName }}</div> -->
 
-<ul>
+<!-- <ul *ngIf="isShowing">
   <li>
     <img [src]="src" [alt]="name" width="100" />
     {{ name }} by {{ author }}
@@ -15,5 +18,11 @@
   <li>
     <img [src]="src2" [alt]="name2" width="100" />
     {{ name2 }} by {{ author2 }}
+  </li>
+</ul> -->
+<ul *ngIf="isShowing">
+  <li *ngFor="let illustration of illustrations">
+    <img [src]="illustration.image" [alt]="illustration.name" width="100" />
+    {{ illustration.name }} by {{ illustration.author }}
   </li>
 </ul>
