@@ -18,4 +18,8 @@ export class CartService {
   get() {
     return this.cart;
   }
+
+  remove(illustration: Illustration) {
+    this.cart = this.cart.filter((item) => item !== illustration);
+  }
 }

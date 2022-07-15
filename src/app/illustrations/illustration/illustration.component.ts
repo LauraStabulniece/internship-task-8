@@ -15,7 +15,7 @@ export class IllustrationComponent implements OnInit {
   // @Output() illustrationEmitter = new EventEmitter<Illustration>();
 
   // myInterval: any = null;
-
+  isInCart: boolean = false;
   constructor(private cartService: CartService) {}
 
   ngOnInit(): void {}
@@ -35,6 +35,12 @@ export class IllustrationComponent implements OnInit {
   //   }
   // }
   addToCart() {
+    this.isInCart = true;
     this.cartService.add(this.illustration);
+  }
+
+  removeFromCart() {
+    this.isInCart = false;
+    this.cartService.remove(this.illustration);
   }
 }
