@@ -6,7 +6,7 @@ ul {
 .illustration {
     list-style: none;
     text-overflow: ellipsis;
-    width: 25%;
+    width: 30%;
     text-align: center;
     cursor: pointer;
 }

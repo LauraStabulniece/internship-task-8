@@ -20,6 +20,8 @@
     {{ name2 }} by {{ author2 }}
   </li>
 </ul> -->
+
+<!-- <button (click)="isShowing = !isShowing">Toggle</button> -->
 <ul *ngIf="isShowing">
   <ng-container *ngFor="let singleIllustration of illustrations; let i = index">
     <app-illustration (illustrationEmitter)="addToCard($event)" [illustration]="singleIllustration"></app-illustration>

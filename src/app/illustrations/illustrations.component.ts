@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Illustration} from '../interfaces/Illustration';
-
+import { Illustration } from '../interfaces/Illustration';
+import { IllustrationsService } from './illustrations.service';
 
 @Component({
   selector: 'app-illustrations',
@@ -8,34 +8,26 @@ import {Illustration} from '../interfaces/Illustration';
   styleUrls: ['./illustrations.component.css'],
 })
 export class IllustrationsComponent implements OnInit {
-  illustrations: Illustration[] = [
-    {
-      name: 'bee',
-      author: 'belinda murphy',
-      image: '../../assets/bee.jpg',
-      amount: 700,
-    },
-    {
-      name: 'lady with the dog',
-      author: 'beatrice sautereau',
-      image: '../../assets/ladyWithTheDog.jpg',
-      amount: 701,
-    },
-    {
-      name: 'swimmer',
-      author: 'mark ulriksen',
-      image: '../../assets/swimmer.png',
-      amount: 702,
-    },
-    {
-      name: 'sonos',
-      author: 'anita kunz',
-      image: '../../assets/sonos.png',
-      amount: 703,
-    },
-  ];
+  constructor(private illustrationsService: IllustrationsService) {
+
+    this.illustrations = this.illustrationsService.getIllustrations();
+  }
+
+  // constructor(private illustrationsService: IllustrationsService) {
+
+  //   this.illustrations = this.illustrationsService.getIllustrations();
+  // }
+
+  illustrations: Illustration[] = [];
 
   card: Illustration[] = [];
+
+
+
+
+  isShowing: boolean = true;
+
+  // card: Illustration[] = [];
   // name: string = 'Bee';
   // author: string = 'Belinda Murphy';
   // src: string =
@@ -46,14 +38,19 @@ export class IllustrationsComponent implements OnInit {
   // src2: string =
   //   'http://1.bp.blogspot.com/-o-AKrWfiZrM/UFi2tGDC_7I/AAAAAAAAL0I/EBvaNwlQUKI/s1600/image-id21-128.jpg';
 
-  isShowing: boolean = true;
+  // isShowing: boolean = true;
   // isDisabled: boolean = false;
-  constructor() {}
+  // constructor() {
+  //   console.log({constructor: "constructor"});
+  // }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    // console.log({onInIt: "OnInIt"});
+    this.illustrations = this.illustrationsService.getIllustrations();
+  }
 
   addToCard(illustration: Illustration) {
-    console.log(illustration);
+    // console.log(illustration);
   }
   // toggleIllustrations() {
   //   this.isShowing = !this.isShowing;
