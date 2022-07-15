@@ -2,8 +2,8 @@
 <!-- <div *ngIf="getCart().length > 0">{{ getCart().length }}</div> -->
 
 <div *ngIf="getCart().length > 0">
-  <div *ngFor="let illustration of getCart()">
-    <p>{{ illustration.name }}</p>
+  <div *ngFor="let illustration of getCart(); let i = index">
+    <p class="my-4 text-2xl">{{ i + 1 }}.{{ illustration.name }}</p>
   </div>
 </div>
 <div *ngIf="getCart().length === 0">No illustrations in your cart</div>
