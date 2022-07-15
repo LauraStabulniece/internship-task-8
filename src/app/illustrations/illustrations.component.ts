@@ -8,10 +8,9 @@ import { IllustrationsService } from './illustrations.service';
   styleUrls: ['./illustrations.component.css'],
 })
 export class IllustrationsComponent implements OnInit {
-  constructor(private illustrationsService: IllustrationsService) {
-
-    this.illustrations = this.illustrationsService.getIllustrations();
-  }
+  // constructor(private illustrationsService: IllustrationsService) {
+  //   this.illustrations = this.illustrationsService.getIllustrations();
+  // }
 
   // constructor(private illustrationsService: IllustrationsService) {
 
@@ -20,10 +19,8 @@ export class IllustrationsComponent implements OnInit {
 
   illustrations: Illustration[] = [];
 
+  constructor(private illustrationsService: IllustrationsService) {}
   card: Illustration[] = [];
-
-
-
 
   isShowing: boolean = true;
 
