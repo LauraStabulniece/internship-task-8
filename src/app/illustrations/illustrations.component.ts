@@ -20,11 +20,11 @@ export class IllustrationsComponent implements OnInit {
   illustrations: Illustration[] = [];
 
   constructor(private illustrationsService: IllustrationsService) {}
-  card: Illustration[] = [];
+  // cart: Illustration[] = [];
 
   isShowing: boolean = true;
 
-  // card: Illustration[] = [];
+  // cart: Illustration[] = [];
   // name: string = 'Bee';
   // author: string = 'Belinda Murphy';
   // src: string =
@@ -45,20 +45,19 @@ export class IllustrationsComponent implements OnInit {
     // console.log({onInIt: "OnInIt"});
     this.illustrations = this.illustrationsService.getIllustrations();
   }
-
-  addToCart(illustration: Illustration) {
-    // console.log(illustration);
-  }
-  // toggleIllustrations() {
-  //   this.isShowing = !this.isShowing;
-  // }
-
-  // handleClick() {
-  //   this.isDisabled = true;
-  // }
-
-  // myName: string = '';
-  // handleInput(event: any) {
-  //   this.myName = event.target.value;
-  // }
 }
+// addToCart(illustration: Illustration) {
+// console.log(illustration);
+// }
+// toggleIllustrations() {
+//   this.isShowing = !this.isShowing;
+// }
+
+// handleClick() {
+//   this.isDisabled = true;
+// }
+
+// myName: string = '';
+// handleInput(event: any) {
+//   this.myName = event.target.value;
+// }

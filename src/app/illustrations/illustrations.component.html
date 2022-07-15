@@ -22,8 +22,13 @@
 </ul> -->
 
 <!-- <button (click)="isShowing = !isShowing">Toggle</button> -->
-<ul *ngIf="isShowing">
+<!-- <ul *ngIf="isShowing">
   <ng-container *ngFor="let singleIllustration of illustrations; let i = index">
     <app-illustration (illustrationEmitter)="addToCart($event)" [illustration]="singleIllustration"></app-illustration>
+  </ng-container>
+</ul> -->
+<ul *ngIf="isShowing">
+  <ng-container *ngFor="let singleIllustration of illustrations; let i = index">
+    <app-illustration [illustration]="singleIllustration"></app-illustration>
   </ng-container>
 </ul>
