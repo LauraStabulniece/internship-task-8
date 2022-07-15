@@ -29,7 +29,7 @@ export class IllustrationComponent implements OnInit {
   //   console.log({onDestroy: "onDestroy"});
   // }
 
-  addToCard() {
+  addToCart() {
     this.illustrationEmitter.emit(this.illustration);
   }
 }

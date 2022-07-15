@@ -46,7 +46,7 @@ export class IllustrationsComponent implements OnInit {
     this.illustrations = this.illustrationsService.getIllustrations();
   }
 
-  addToCard(illustration: Illustration) {
+  addToCart(illustration: Illustration) {
     // console.log(illustration);
   }
   // toggleIllustrations() {
