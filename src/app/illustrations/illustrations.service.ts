@@ -1,13 +1,16 @@
-import { Injectable } from '@angular/core';
+// import { Injectable } from '@angular/core';
 
 // @Injectable({
 //   providedIn: 'root',
 // })
 
+import { Injectable } from '@angular/core';
 
-@Injectable()
-
+@Injectable({
+  providedIn: 'root',
+})
 export class IllustrationsService {
+  constructor() {}
 
   getIllustrations() {
     return [
@@ -38,4 +41,3 @@ export class IllustrationsService {
     ];
   }
 }
-

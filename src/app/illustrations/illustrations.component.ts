@@ -8,21 +8,40 @@ import { IllustrationsService } from './illustrations.service';
   styleUrls: ['./illustrations.component.css'],
 })
 export class IllustrationsComponent implements OnInit {
-  // constructor(private illustrationsService: IllustrationsService) {
-  //   this.illustrations = this.illustrationsService.getIllustrations();
-  // }
-
-  // constructor(private illustrationsService: IllustrationsService) {
-
-  //   this.illustrations = this.illustrationsService.getIllustrations();
-  // }
-
   illustrations: Illustration[] = [];
-
   constructor(private illustrationsService: IllustrationsService) {}
-  // cart: Illustration[] = [];
 
   isShowing: boolean = true;
+
+  ngOnInit(): void {
+    this.illustrations = this.illustrationsService.getIllustrations();
+  }
+}
+// import { Component, OnInit } from '@angular/core';
+// import { Illustration } from '../interfaces/Illustration';
+// import { IllustrationsService } from './illustrations.service';
+
+// @Component({
+//   selector: 'app-illustrations',
+//   templateUrl: './illustrations.component.html',
+//   styleUrls: ['./illustrations.component.css'],
+// })
+// export class IllustrationsComponent implements OnInit {
+  // constructor(private illustrationsService: IllustrationsService) {
+  //   this.illustrations = this.illustrationsService.getIllustrations();
+  // }
+
+  // constructor(private illustrationsService: IllustrationsService) {
+
+  //   this.illustrations = this.illustrationsService.getIllustrations();
+  // }
+
+  // illustrations: Illustration[] = [];
+
+  // constructor(private illustrationsService: IllustrationsService) {}
+  // cart: Illustration[] = [];
+
+  // isShowing: boolean = true;
 
   // cart: Illustration[] = [];
   // name: string = 'Bee';
@@ -41,11 +60,11 @@ export class IllustrationsComponent implements OnInit {
   //   console.log({constructor: "constructor"});
   // }
 
-  ngOnInit(): void {
+  // ngOnInit(): void {
     // console.log({onInIt: "OnInIt"});
-    this.illustrations = this.illustrationsService.getIllustrations();
-  }
-}
+//     this.illustrations = this.illustrationsService.getIllustrations();
+//   }
+// }
 // addToCart(illustration: Illustration) {
 // console.log(illustration);
 // }

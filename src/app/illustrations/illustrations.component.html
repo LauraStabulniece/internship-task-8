@@ -27,8 +27,9 @@
     <app-illustration (illustrationEmitter)="addToCart($event)" [illustration]="singleIllustration"></app-illustration>
   </ng-container>
 </ul> -->
-<ul *ngIf="isShowing">
-  <ng-container *ngFor="let singleIllustration of illustrations; let i = index">
-    <app-illustration [illustration]="singleIllustration"></app-illustration>
+<ul *ngIf="isShowing" class="flex flex-wrap justify-center">
+  <ng-container *ngFor="let singleIllustration of illustrations; let i=index">
+      <app-illustration [illustration]="singleIllustration" class="w-1/2 p-5 text-center">
+      </app-illustration>
   </ng-container>
 </ul>
